@@ -14,8 +14,8 @@ function App() {
 
     const name = todoNameRef.current.value;
     if(name === "") return;
-    setTodos((prevTodos) => {
-      return [...prevTodos, { id: uuidv4(), name: name, completed: false }];
+    setTodos((todos) => {
+      return [...todos, { id: uuidv4(), name: name, completed: false }];
     });
     todoNameRef.current.value = null;
 
@@ -29,7 +29,7 @@ function App() {
   }
 
   const handleClear = () => {
-
+    
     const newTodos = todos.filter((todo) => !todo.completed);
     setTodos(newTodos);
 
